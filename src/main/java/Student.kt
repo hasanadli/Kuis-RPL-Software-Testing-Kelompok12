@@ -31,7 +31,10 @@ class Student() {
     *  Orang tua bertipe Object yang berisi String nama kedua orang tua.
     *  Contoh : {"ayah" : "Stephen Sambura", "Ibu" : "Stephani Sambruang"}
     */
-    val parent: Map<String, String> = mapOf("ayah" to "Stephen Sambura", "Ibu" to "Stephani Sambruang")
+
+    //val parent: Map<String, String> = mapOf("ayah" to "Stephen Sambura", "Ibu" to "Stephani Sambruang")
+    //Ini nda tambahi pkai object
+    var orangTua: parent = parent("Stephen Sambura", "Stephani Sambruang")
 
     /*
     * Hobi yang bertipe array atau list atau arraylist yang berisikan string
