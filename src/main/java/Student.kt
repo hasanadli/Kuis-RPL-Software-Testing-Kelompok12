@@ -6,11 +6,29 @@ class Student() {
 
     // properties student berisikan :
     // ID yang memiliki tipe data INT dan hanya diisi bilangan bulat Contoh : 5
-    val Sid: Int = 5
+    private var Sid: Int = 0
+    get() = field
+
+    fun setSid(){
+        this.Sid = Sid
+    }
+
     // Nama bertipe String, Contoh : Joko Tarbiah
-    val Sname: String = "Joko Tarbiah"
+    private var Sname: String = ""
+    get() = field
+
+    fun setSname(){
+        this.Sname = Sname
+    }
+
     // Tanggal lahir bertipe String, contoh : 10 Agustus 2019
-    val Sbirth: String = "10 Agustus 2019"
+    private var Sbirth: String = ""
+    get() = field
+
+    fun setSbirth(){
+        this.Sbirth = Sbirth
+    }
+
     // fungsi yang mengubah format tanggal lahir menjadi standar tanggal dd-mm-yyyy. Contoh : 10-08-2019
     fun changeFormatDate(Sbirth: String): String {
         val dateFormat = SimpleDateFormat("dd-MM-yyyy")
@@ -20,8 +38,14 @@ class Student() {
     }
 
     // Nomor handphone bertipe String yang memiliki syarat minimal panjang huruf 11 dan maksimal 12
-    val Sphone: String = "081212121212"
-    fun createPhoneNumber(Sphone: String): String {
+    private var Sphone: String = ""
+    fun setPhoneNumber(Sphone: String): String {
+        this.Sphone = if (Sphone.length < 11 || Sphone.length > 12) {
+            "Nomor tidak valid"
+        } else {
+            Sphone
+        }
+
         if (Sphone.length < 11 || Sphone.length > 12) {
             return "Nomor Handphone Tidak Valid"
         }
@@ -34,13 +58,22 @@ class Student() {
 
     //val parent: Map<String, String> = mapOf("ayah" to "Stephen Sambura", "Ibu" to "Stephani Sambruang")
     //Ini nda tambahi pkai object
-    var orangTua: parent = parent("Stephen Sambura", "Stephani Sambruang")
+    private var orangTua: parent = parent("Stephen Sambura", "Stephani Sambruang")
+    get() = field
 
+    fun setOrangTua(){
+        this.orangTua = orangTua
+    }
     /*
     * Hobi yang bertipe array atau list atau arraylist yang berisikan string
     * contoh : ['Bersepeda', 'Bernyanyi', 'Makan']
     * */
-    val hobby: List<String> = listOf("Bersepeda", "Bernyanyi", "Makan")
+    private var hobby: List<String> = listOf("Bersepeda", "Bernyanyi", "Makan")
+    get() = field
+
+    fun setHobby(){
+        this.hobby = hobby
+    }
 
     /*
     * NIM yang memiliki tipe data String yang bersifat OTOMATIS di generate saat pembuatan object Student
